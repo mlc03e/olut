@@ -1,0 +1,2 @@
+class BeerLocationsController < ApplicationController
+end
