@@ -17,7 +17,3 @@
 # end
 #
 # get_beers_from_api
-
-brewery_db = BreweryDB::Client.new do |config|
-  config.api_key = 2faba3ed0c255eed2ebf2dfedef31d66
-end
