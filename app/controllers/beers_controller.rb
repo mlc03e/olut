@@ -1,7 +1,9 @@
 class BeersController < ApplicationController
   def index
+
     if params[:beer]
-      @beer = Beer.where("beer", "%#{params[:beer]}")
+      @searched = Beer.search(params[:search], params[:id])
+
     else
       @beers = Beer.all
   end
@@ -25,7 +27,12 @@ end
     end
   end
 
-
+  def search
+     # @beer = Beer.find_by(name: params['q'])
+     # @beers = Beer.all.select {|beer| beer == @beer}
+     @beers = Beer.where(['name LIKE ?', "%#{params['q']}%"])
+     render :index
+   end
 
   private
 
