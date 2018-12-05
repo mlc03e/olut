@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "Olut",
+=======
+  "name": "olut",
+>>>>>>> c26ef442b5efbcf21e7ecd6eba2e3ce9efcad51e
   "private": true,
   "dependencies": {}
 }

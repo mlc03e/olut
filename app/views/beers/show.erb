@@ -1,0 +1,10 @@
+<h1><%= @beer.name %></h1>
+
+<%= @beer.category %>
+<%= @beer.abv %>
+<%= @beer.info %>
+<%= image_tag(@beer.image) %>
+
+<% @beer.ratings.to_i.times do  %>
+ <span class="glyphicon glyphicon-star">Y</span>
+<% end %>
