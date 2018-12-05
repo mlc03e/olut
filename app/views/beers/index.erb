@@ -1,15 +1,11 @@
 <h1>BEERS</h1>
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:q, "Search for:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 
 <% @beers.each do |beer| %>
-<%= link_to beer.name, beer%>
+<%= link_to beer.name, beer %>
 <% end %>
-
-<%= form_tag(beers_path method: :get) do %>
-  Beer <%= text_field_tag :beer, params[:beer] %>
-  <%= submit_tag 'Search', name: nil %>
-<% end %>
-
-<%# <iframe width="300" height="300" frameborder="0" style="border:0"
- src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA3SG6gUxxKwwKkYV6Pagm9zV06sEs7Xuw&q=ADDRESS_OR_COORDINATES"
- allowfullscreen>
-</iframe> %>

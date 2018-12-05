@@ -9,10 +9,16 @@ class Beer < ApplicationRecord
  5 - ratings.to_i
 end
 
-  # def self.search(query)
-  #   beer_location = BeerLocation.find_by(name: query)
-  #   if !beer_location.nil?
-  #     self.where(beer_location_id: beer_location.id)
-  #   end
-  # end
-end
+  def self.search(search, id)
+  if search
+    where (['name like ?', "%#{search}%"])
+  # if beer
+  #     self.where(beer_id: beer)
+    else
+      Beer.all
+  end
+    else
+      Beer.all
+    end
+  end
+# end

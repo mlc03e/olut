@@ -111,5 +111,6 @@ BeerLocation.create(beer: Beer.fourth, location: parlour)
 BeerLocation.create(beer: Beer.fourth, location: dive)
 BeerLocation.create(beer: Beer.fourth, location: milk)
 
-
+User.create(name: "Meghan", email: "meg@gmail.com")
+User.create(name: "Adam", email: "adam@gmail.com")
 #
