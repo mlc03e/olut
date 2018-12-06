@@ -5,7 +5,13 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-
+<ul>
 <% @beers.each do |beer| %>
-<%= link_to beer.name, beer %>
+<%= link_to beer.name, beer %> <br>
+<%= button_to "5", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:5}} %>
+<%= button_to "4", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:4}} %>
+<%= button_to "3", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:3}} %>
+<%= button_to "2", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:2}} %>
+<%= button_to "1", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:1}} %><br>
 <% end %>
+<ul>
