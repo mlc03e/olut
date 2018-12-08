@@ -5,13 +5,24 @@
   <%= submit_tag("Search") %>
 <% end %>
 
-<ul>
-<% @beers.each do |beer| %>
-<%= link_to beer.name, beer %> <br>
-<%= button_to "5", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:5}} %>
-<%= button_to "4", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:4}} %>
-<%= button_to "3", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:3}} %>
-<%= button_to "2", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:2}} %>
-<%= button_to "1", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:1}} %><br>
-<% end %>
-<ul>
+<div class="star-rating">
+<p><% @beers.each do |beer| %>
+<p><%= link_to beer.name, beer %> <br>
+<p><%= button_to "5", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:5}} %>
+<p><%= button_to "4", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:4}} %>
+<p><%= button_to "3", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:3}} %>
+<p><%= button_to "2", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:2}} %>
+<p><%= button_to "1", ratings_path, params: {rating: {user_id: 1, beer_id: beer.id, ratings:1}} %><br>
+<p><% end %>
+
+  <div class="star-rating">
+    <fieldset>
+      <input type="radio" id="star5" name="rating" value="5" /><label for="star5" title="Outstanding">5 stars</label>
+      <input type="radio" id="star4" name="rating" value="4" /><label for="star4" title="Very Good">4 stars</label>
+      <input type="radio" id="star3" name="rating" value="3" /><label for="star3" title="Good">3 stars</label>
+      <input type="radio" id="star2" name="rating" value="2" /><label for="star2" title="Poor">2 stars</label>
+      <input type="radio" id="star1" name="rating" value="1" /><label for="star1" title="Very Poor">1 star</label>
+    </fieldset>
+  </div>
+  <h1>CSS Star Rating</h1>
+  <p>Simplified version of Lea Verou's <a href="http://lea.verou.me/2011/08/accessible-star-rating-widget-with-pure-css/">accessible star rating widget</a> using FontAwesome to display empty stars</p>

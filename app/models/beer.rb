@@ -25,12 +25,16 @@ end
     end
 
   def average_rating
-    ratings = self.ratings.map do |rating| rating.ratings end
-    number_ratings= ratings.select do |rating| rating != nil end
-      numbers = number_ratings.map do |number| number.to_i end
-        sum = numbers.inject(:+)
-        sum/ numbers.length
+
+    ratings = self.ratings.map {|rating| rating.ratings}
+    number_ratings= ratings.select {|rating| rating != nil}
+    numbers = number_ratings.map do |number|
+      number.to_i
+    end
+
+    sum = numbers.inject(:+)
+    sum/ numbers.length
   end
 
-  end
-# end
+
+ end
